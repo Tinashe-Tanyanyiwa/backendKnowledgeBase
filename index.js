@@ -13,9 +13,14 @@ const app = express();
 // CONNECTION STRING
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
-  user: process.env.DB_USER,
+  user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
-  database: process.env.DATABASE,
+  database: process.env.DB_DBNAME,
+
+  //for railway
+  // waitForConnections: true,
+  // connectionLimit: 10,
+  // queueLimit: 0
 });
 
 app.use(express.json());
